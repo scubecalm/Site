@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
-$nbresult= mysql_num_rows ($result);
+$nbresult= mysqli_num_rows($result);
 
 ?>
 
@@ -73,7 +73,7 @@ $nbresult= mysql_num_rows ($result);
                         <h1 class="mbr-hero__text">My Website</h1>
                         <p class="mbr-hero__subtext">Server:&nbsp;<?php echo gethostname();?></p>
                         <p class="mbr-hero__subtext">BD ip :&nbsp;<?php echo $db_ip;?></p>
-                        <p class="mbr-hero__subtext">NB Users:&nbsp;<?php echo $nbresult;?></p>
+                        <p class="mbr-hero__subtext">NB Users in DB:&nbsp;<?php echo $nbresult;?></p>
 
 
                     </div>
