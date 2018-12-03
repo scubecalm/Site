@@ -1,9 +1,9 @@
 <?php
 
-$db_ip= <myip>;
-$db_name=<mydb>;
-$db_user=<mydbuser>;
-$db_pass=<mydbpass>;
+$db_ip="<myip>";
+$db_name="<mydb>";
+$db_user="<mydbuser>";
+$db_pass="<mydbpass>";
 
 // Create connection
 $conn = new mysqli($db_ip, $db_user, $db_pass, $db_name);
