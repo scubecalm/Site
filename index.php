@@ -1,3 +1,23 @@
+<?php
+
+$db_ip= <myip>;
+$db_name=<mydb>;
+$db_user=<mydbuser>;
+$db_pass=<mydbpass>;
+
+// Create connection
+$conn = new mysqli($db_ip, $db_user, $db_pass, $db_name);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+$nbresult= mysql_num_rows ($result);
+
+?>
+
 <!DOCTYPE html>
 <html >
 <head>
@@ -51,8 +71,11 @@
                 <div class="row"><div class=" col-sm-8 col-sm-offset-2">
                     <div class="mbr-hero animated fadeInUp">
                         <h1 class="mbr-hero__text">My Website</h1>
-                        <p class="mbr-hero__subtext">Server:&nbsp;<?php
-echo gethostname();?></p>
+                        <p class="mbr-hero__subtext">Server:&nbsp;<?php echo gethostname();?></p>
+                        <p class="mbr-hero__subtext">BD ip :&nbsp;<?php echo $db_ip;?></p>
+                        <p class="mbr-hero__subtext">NB Users:&nbsp;<?php echo $nbresult;?></p>
+
+
                     </div>
                     
                 </div></div>
