@@ -4,6 +4,7 @@ $db_ip="<myip>";
 $db_name="<mydb>";
 $db_user="<mydbuser>";
 $db_pass="<mydbpass>";
+$app_name="<myappname>";
 
 // Create connection
 $conn = new mysqli($db_ip, $db_user, $db_pass, $db_name);
@@ -70,9 +71,9 @@ $nbresult= mysqli_num_rows($result);
             <div class="mbr-box mbr-box--stretched"><div class="mbr-box__magnet mbr-box__magnet--center-center">
                 <div class="row"><div class=" col-sm-8 col-sm-offset-2">
                     <div class="mbr-hero animated fadeInUp">
-                        <h1 class="mbr-hero__text">My Website</h1>
+                        <h1 class="mbr-hero__text"><?php echo $app_name;?></h1>
                         <p class="mbr-hero__subtext">Server:&nbsp;<?php echo gethostname();?></p>
-                        <p class="mbr-hero__subtext">BD ip :&nbsp;<?php echo $db_ip;?></p>
+                        <p class="mbr-hero__subtext">DB ip :&nbsp;<?php echo $db_ip;?></p>
                         <p class="mbr-hero__subtext">NB Users in DB:&nbsp;<?php echo $nbresult;?></p>
 
 
